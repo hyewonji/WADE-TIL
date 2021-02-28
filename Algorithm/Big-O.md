@@ -13,6 +13,8 @@
    ```
 
    - 기울기가 0인 그래프
+   - 최고의 알고리즘
+   - ex) 테이블의 조회 및 삽입
 
 2. O(n) : 입력 데이터 크기와 비례하여 처리 시간이 증가한다.
 
@@ -23,6 +25,8 @@
    ```
 
    - 그래프가 선형 그래프
+   - 선형시간 알고리즘이라고 한다.
+   - **순차탐색**
 
 3. O(n^2)
 
@@ -37,6 +41,7 @@
 
    - n이 하나 늘어날 때마다 가로, 세로 한 줄씩 늘어남.
    - 그래프가 x≥0 인 2차함수의 형태
+   - ex) bubble sort 같은 비효율적인 정렬 알고리즘
 
 4. O(n^3)
 
@@ -55,19 +60,17 @@
 
 5. O(2^n)
 
-   - Fobonacci Numbers
+   - ex) Fobonacci Numbers를 재귀로 계산하는 알고리즘
    - 한 숫자를 호출하기 위해서 그 전단계의 2개의 수를 호출해야 한다. 이를 n번 반복
 
    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2296d29f-8621-4833-9977-f19440fc8685/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2296d29f-8621-4833-9977-f19440fc8685/Untitled.png)
 
 6. O(log n)
-
-   - binary search(이진검색) 이 대표적이다.
-
-   ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/55bc7dab-433b-418e-9720-94642f4c4791/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/55bc7dab-433b-418e-9720-94642f4c4791/Untitled.png)
-
-   - key 값을 찾기 위해 배열의 중간값과 key값을 비교한다.
-   - 한번 처리가 진행될 때마다 검색해야할 데이터 양이 1/2이 된다.
+   - binary search(**이진탐색**) 이 대표적이다.
+     - key 값을 찾기 위해 배열의 중간값과 key값을 비교한다.
+     - 한번 처리가 진행될 때마다 검색해야할 데이터 양이 1/2이 된다.
+   - 매우 큰 입력값에도 크게 영향을 받지 않는다.
+     ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/55bc7dab-433b-418e-9720-94642f4c4791/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/55bc7dab-433b-418e-9720-94642f4c4791/Untitled.png)
 
 O(2n) ⇒ O(n)
 
