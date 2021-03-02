@@ -2,8 +2,8 @@
 
 1. Redux 사용하는 방법 2가지
 
-- Terminal에 `npm install —save redux` 로 redux 설치
-- 검색엔진에 `redux cdn` 을 검색해 나오는 페이지에서 url을 html script src에 입력해준다.
+   - Terminal에 `npm install —save redux` 로 redux 설치
+   - 검색엔진에 `redux cdn` 을 검색해 나오는 페이지에서 url을 html script src에 입력해준다.
 
 2. Redux 사용하는 과정(**with-redux.html**)
    1. store 생성
