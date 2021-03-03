@@ -21,6 +21,7 @@ function reducer(state, action){
     }
     var newState;
     if(action.type === 'CHANGE_COLOR'){
+        // 기존 상태를 복제해 새로운 상태를 만든다.
         newState = Object.assign({},state,{color:action.color});
     } 
     // reducer를 이용해 원하는 정보를 한번에 호출 할 수 있다는 장점이 있다.
@@ -29,6 +30,7 @@ function reducer(state, action){
     return newState;
 }
 
+// store에 reducer와 Redux DevTools를 넣어준다.
 var store = Redux.createStore(
     reducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -45,6 +47,7 @@ function red(){
         </div>
     `;
 }
+// subscribe를 통해 render함수를 호출한다.
 store.subscribe(red);
 red();
 
