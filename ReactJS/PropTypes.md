@@ -80,3 +80,94 @@ export default HelloWorldComponent;
 ```
 
 - 함수형 컴포넌트에 PropTypes 지정 하는 방법이다.
+<br/>
+ 
+4. PropTypes의 타입 종류
+```jsx
+import PropTypes from 'prop-types';
+
+MyComponent.propTypes = {
+  // 가능한 props의 타입들
+  // 모두 선택 사항이다.
+  optionalArray: PropTypes.array,
+  optionalBool: PropTypes.bool,
+  optionalFunc: PropTypes.func,
+  optionalNumber: PropTypes.number,
+  optionalObject: PropTypes.object,
+  optionalString: PropTypes.string,
+  optionalSymbol: PropTypes.symbol,
+
+  // Render 가능한 객체 타입
+  // 숫자(numbers), 문자(strings), 엘리먼트(elements), 또는 이러한 타입들(types)을 포함하고 있는 배열(array) (혹은 배열의 fragment)
+  optionalNode: PropTypes.node,
+
+  // React 엘리먼트.
+  optionalElement: PropTypes.element,
+
+  // React 엘리먼트 타입 (ie. MyComponent)
+  optionalElementType: PropTypes.elementType,
+
+  // JavaScript의 instanceof 연산자를 사용해 prop가 클래스의 인스턴스임을 선언
+  optionalMessage: PropTypes.instanceOf(Message),
+
+  // 열거형(enum)으로 처리하여 prop가 특정 값들로 제한되도록 설정
+  optionalEnum: PropTypes.oneOf(['News', 'Photos']),
+
+  // 여러 종류중 하나의 종류가 될 수 있는 객체
+  optionalUnion: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.instanceOf(Message)
+  ]),
+
+  // 특정 타입의 행렬
+  optionalArrayOf: PropTypes.arrayOf(PropTypes.number),
+
+  // 특정 타입의 프로퍼티 값들을 갖는 객체
+  optionalObjectOf: PropTypes.objectOf(PropTypes.number),
+
+  // 특정 형태를 갖는 객체
+  optionalObjectWithShape: PropTypes.shape({
+    color: PropTypes.string,
+    fontSize: PropTypes.number
+  }),
+
+  // An object with warnings on extra properties
+  optionalObjectWithStrictShape: PropTypes.exact({
+    name: PropTypes.string,
+    quantity: PropTypes.number
+  }),
+
+  // prop가 반드시 있어야 한다는 설정
+  requiredFunc: PropTypes.func.isRequired,
+
+  // 모든 데이터 타입이 가능한 필수값
+  requiredAny: PropTypes.any.isRequired,
+
+  // 사용자 정의 유효성 검사기를 지정할 수 있다.
+  // 검사 실패 시에는 에러(Error) 객체를 반환해야 한다.
+  // `oneOfType`안에서는 작동하지 않으므로 `console.warn` 혹은 throw 하면 안된다.
+  customProp: function(props, propName, componentName) {
+    if (!/matchme/.test(props[propName])) {
+      return new Error(
+        'Invalid prop `' + propName + '` supplied to' +
+        ' `' + componentName + '`. Validation failed.'
+      );
+    }
+  },
+
+  // `arrayOf` 와 `objectOf 에 사용자 정의 유효성 검사기를 적용할 수 있다.
+  // 검사 실패 시에는 에러(Error) 객체를 반환해야 한다.
+  // 유효성 검사기는 배열(array) 혹은 객체의 각 키(key)에 대하여 호출된다.
+  // 유효성 검사기의 첫 두 개의 변수는 배열 또는 객체 자신과 현재 아이템의 키다.
+
+  customArrayProp: PropTypes.arrayOf(function(propValue, key, componentName, location, propFullName) {
+    if (!/matchme/.test(propValue[key])) {
+      return new Error(
+        'Invalid prop `' + propFullName + '` supplied to' +
+        ' `' + componentName + '`. Validation failed.'
+      );
+    }
+  })
+};
+```
