@@ -106,15 +106,49 @@ linkedlist1.desc()
 - 연결 정보를 찾는 시간이 필요해서 접근 속도가 느리다.
 - 중간 데이터 삭제 혹은 삽입시, 데이터 연결을 재구성해야 하는 작업이 필요 하다.
 
-  ```python
-  node = head
-  search = True
-  while search:
-  	if node.data == 1:
-  		search = False
-  	else:
-  		node = node.next
-  node_next = node.next
-  node.next = node3
-  node3.next = node_next
-  ```
+<br>
+
+### 복잡한 기능의 링크드 리스트
+
+**중간 노드 삽입**
+
+```python
+node = head
+search = True
+while search:
+	if node.data == 1:
+		search = False
+	else:
+		node = node.next
+
+node3 = Node(1.5)
+
+node_next = node.next
+node.next = node3
+node3.next = node_next
+```
+
+**중간 노드 삭제**
+
+```python
+def delete(self,data):
+		if self.head == ":
+			print("해당 값을 가진 노드가 없습니다")
+			return
+		
+		if self.head.data == data:
+			temp = self.head
+			self.head = self.head.next
+			del temp
+		else:
+			node = self.head
+			while node.next:
+				if node.next.data == data:
+					temp = node.next
+					node.next = node.next.next
+					del temp
+					return
+				else:
+					node = node.next
+```
+
